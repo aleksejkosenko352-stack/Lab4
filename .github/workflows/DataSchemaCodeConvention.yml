@@ -23,4 +23,5 @@ jobs:
 
       - name: Run SQL Linter (PostgreSQL)
         run: |
+          sqlfluff fix $GITHUB_WORKSPACE/.github/workflows/schema.sql --dialect postgres
           sqlfluff lint $GITHUB_WORKSPACE/.github/workflows/schema.sql --dialect postgres
