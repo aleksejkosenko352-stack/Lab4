@@ -1,0 +1,20 @@
+name: Program Code Convention
+
+on:
+  workflow_dispatch:
+
+jobs:
+  JavascriptCodeLinter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code in Repository
+        uses: actions/checkout@v3
+
+      - name: Install Biome Linter
+        run: |
+          npm install --save-dev --save-exact @biomejs/biome
+
+      - name: Run Biome Linter on JS files
+        run: |
+          npx biome check ProgramCode.js
