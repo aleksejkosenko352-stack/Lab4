@@ -1,1 +1,1 @@
-console.log(`Name of product: ecureRest-SocialGuard`);
+console.log(`Name of product: SecureRest-SocialGuard`);
