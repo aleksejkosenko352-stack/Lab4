@@ -14,8 +14,7 @@ jobs:
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
-          pip install sqlfluff-templater-jinja
 
       - name: Run SQL Linter (PostgreSQL)
         run: |
-          sqlfluff lint $GITHUB_WORKSPACE/blob/main/.github/workflows/schema.sql --dialect postgres
+          sqlfluff lint schema.sql --dialect postgres
