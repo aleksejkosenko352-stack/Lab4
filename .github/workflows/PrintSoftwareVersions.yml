@@ -26,7 +26,8 @@ jobs:
         run: |
           wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.7.4-linux-amd64.tar.gz
           tar xvf influxdb2-client-2.7.4-linux-amd64.tar.gz
-          sudo cp influxdb2-client-2.7.4-linux-amd64/influx /usr/local/bin/
+          # знайти файл "influx" де б він не був
+          find . -type f -name influx -exec sudo cp {} /usr/local/bin/influx \;
 
       - name: Show PostgreSQL version
         run: psql --version
