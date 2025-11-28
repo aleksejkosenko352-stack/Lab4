@@ -1,0 +1,25 @@
+name: PrintSoftwareVersions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-processing-layer-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Node.js version
+        run: node --version
+      - name: Show Python version
+        run: python3 --version
+      - name: Show Java version
+        run: java --version
+      - name: Show Go version
+        run: go version
+
+  print-data-layer-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show PostgreSQL version
+        run: psql --version
+      - name: Show InfluxDB version
+        run: influx version
