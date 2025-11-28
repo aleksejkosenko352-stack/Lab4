@@ -17,4 +17,4 @@ jobs:
 
       - name: Run SQL Linter (PostgreSQL)
         run: |
-          sqlfluff lint schema.sql --dialect postgres
+          sqlfluff lint .github/workflows/schema.sql --dialect postgres
