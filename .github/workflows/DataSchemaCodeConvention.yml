@@ -16,6 +16,11 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install sqlfluff
 
+      - name: Check files in workflows folder
+        run: |
+          echo "Listing files in .github/workflows/"
+          ls -l .github/workflows/
+
       - name: Run SQL Linter (PostgreSQL)
         run: |
-          sqlfluff lint .github/workflows/schema.sql --dialect postgres
+          sqlfluff lint $GITHUB_WORKSPACE/.github/workflows/schema.sql --dialect postgres
