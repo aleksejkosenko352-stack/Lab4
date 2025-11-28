@@ -1,8 +1,7 @@
 name: Data Schema Code Convention
 
 on:
-  push:
-    branches: [LW11]
+  workflow_dispatch:
 
 jobs:
   SQLLinter:
