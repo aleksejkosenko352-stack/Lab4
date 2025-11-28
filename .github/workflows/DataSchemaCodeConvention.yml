@@ -13,6 +13,7 @@ jobs:
 
       - name: Install SQLFluff
         run: |
+          python3 -m pip install --upgrade pip
           pip install sqlfluff
 
       - name: Run SQL Linter (PostgreSQL)
