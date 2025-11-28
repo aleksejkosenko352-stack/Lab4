@@ -1,7 +1,7 @@
 name: PrintSoftwareVersions
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
 
 jobs:
   print-processing-layer-versions:
@@ -17,9 +17,20 @@ jobs:
         run: go version
 
   print-data-layer-versions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show PostgreSQL version
-        run: psql --version
-      - name: Show InfluxDB version
-        run: influx version
+  runs-on: ubuntu-latest
+  steps:
+    - name: Install PostgreSQL client
+      run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+    - name: Install InfluxDB CLI
+      run: |
+        wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.7.4-linux-amd64.tar.gz
+        tar xvf influxdb2-client-2.7.4-linux-amd64.tar.gz
+        sudo cp influxdb2-client-2.7.4-linux-amd64/influx /usr/local/bin/
+
+    - name: Show PostgreSQL version
+      run: psql --version
+
+    - name: Show InfluxDB version
+      run: influx version
+
