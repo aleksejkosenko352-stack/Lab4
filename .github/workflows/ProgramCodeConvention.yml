@@ -17,4 +17,4 @@ jobs:
 
       - name: Run Biome Linter on JS files
         run: |
-          npx biome check ProgramCode.js
+          npx biome check $GITHUB_WORKSPACE/.github/workflows/ProgramCode.js
