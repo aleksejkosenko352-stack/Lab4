@@ -17,4 +17,5 @@ jobs:
 
       - name: Run Biome Linter on JS files
         run: |
+          biome format $GITHUB_WORKSPACE/.github/workflows/ProgramCodeModified.js
           npx biome check $GITHUB_WORKSPACE/.github/workflows/ProgramCodeModified.js
